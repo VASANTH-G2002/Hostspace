@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Host Space</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="super_container">
+
+        <!-- Header -->
+
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-evenly px-5">
+                            <div class="logo"><a href="#">Host<span>Space</span></a></div>
+                            <nav class="main_nav mx-auto">
+                                <ul class="d-flex flex-row align-items-center justify-content-start">
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <div class="log_reg">
+                                <div class="log_reg_content d-flex flex-row align-items-center justify-content-start">
+                                    <div class="login log_reg_text"><a href="#" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Login</a></div>
+                                    <div class="register log_reg_text"><a href="register.html">Register</a></div>
+                                </div>
+                            </div>
+                            <div class="dropdown logged">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Hello<span id="log_name"></span>
+                                </a>
+                                <ul class="dropdown-menu" style="background-color: #200e35;" onclick="hidename()"
+                                    aria-labelledby="dropdownMenuLink">
+                                    <li><a class="" href="#" style="color: #1befc5; text-align: center;">LogOut</a></li>
+                                </ul>
+                            </div>
+                            <!-- <div id = log_out style="display: none;">
+                                <a class="logout">Logout</a>
+                            </div> -->
+                            <div class="hamburger ml-auto"><i class="fa fa-bars"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Menu -->
+        <!-- <div class="menu_overlay"></div> -->
+        <div class="menu">
+            <div class="row">
+                <div class="col-3 menu_icon"><svg class="menu_close" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <path fill="#ffffff"
+                            d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+                    </svg></div>
+                <div class="col-9 log_reg">
+                    <div class="log_reg_content d-flex flex-row align-items-center justify-content-end">
+                        <div class="login log_reg_text"><a href="#" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Login</a></div>
+                        <div class="register log_reg_text"><a href="register.html">Register</a></div>
+                    </div>
+                </div>
+            </div>
+            <nav class="menu_nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Login Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+                        <div class="container">
+                            <form class="form" id="signin" autocomplete="off">
+                                <h2>Login</h2>
+                                <div class="row w-100">
+                                    <div class="input-group">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="text" id="email" name="email" placeholder="Email Address">
+                                        <small></small>
+                                    </div>
+                                </div>
+                                <div class="row w-100">
+                                    <div class="input-group">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="password" name="password" placeholder="Password">
+                                        <small></small>
+                                    </div>
+                                </div>
+
+                                <div class="row w-100">
+                                    <div class="input-terms">
+                                        <input type="checkbox" name="agree" id="agree" class="check">
+                                        <span>Remember me</span>
+                                    </div>
+                                </div>
+                                <div class="row w-100 align-items-center">
+                                    <div class="col-6">
+                                        <div class="input-group">
+                                            <button type="submit" data-bs-dismiss="modal" class="btn" id="btn">Log
+                                                in</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-terms">
+                                            <span>Forgot password?</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home -->
+
+        <div class="home">
+            <div class="home_background"></div>
+            <div class="background_image background_city" style="background-image:url(../img/city.png)">
+                <div class="cloud cloud_1"><img src="../img/cloud.png" alt=""></div>
+                <div class="cloud cloud_2"><img src="../img/cloud.png" alt=""></div>
+                <div class="cloud cloud_3"><img src="../img/cloud_full.png" alt=""></div>
+                <div class="cloud cloud_4"><img src="../img/cloud.png" alt=""></div>
+                <div class="home_container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="home_content text-center">
+                                    <div class="home_title">The Best Hosting Offers</div>
+                                    <div class="home_text px-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac
+                                        ligula sapien. Suspendisse cursus faucibus finibus.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
+                                <div class="domain_search_form_container">
+                                    <form action="#" id="domain_search_form"
+                                        class="domain_search_form d-flex flex-md-row flex-column align-items-center justify-content-start">
+                                        <div class="d-flex flex-row align-items-center justify-content-start">
+                                            <input type="text" class="domain_search_input" placeholder="yourdomain"
+                                                required="required">
+                                            <div class="align-items-center justify-content-start icon">
+                                                <i class="fa fa-chevron-down"></i>
+                                                <select required="required">
+                                                    <option>.io</option>
+                                                    <option>.com</option>
+                                                    <option>.net</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="domain_search_button d-flex flex-row align-items-center justify-content-center"><img
+                                                src="../img/search.png" alt="">Search</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--intro-->
+
+        <div class="intro mr-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section_title text-center">
+                            <h2>How to get started</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row intro_row mx-5">
+                    <div class="intro_dots" style="background-image:url(../img/dots.png)"></div>
+
+                    <div class="col-lg-4 intro_col">
+                        <div class="intro_item d-flex flex-column align-items-center justify-content-start text-center">
+                            <div
+                                class="intro_icon_container d-flex flex-column align-items-center justify-content-center">
+                                <div class="intro_icon"><img src="../img/icon_1.svg" alt=".."></div>
+                            </div>
+                            <div class="intro_item_content">
+                                <div class="intro_item_title">Buy your Domain</div>
+                                <div class="intro_item_text">
+                                    <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue
+                                        condimentum. Etiam pretium turpis eget nibh laoreet iaculis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 intro_col">
+                        <div class="intro_item d-flex flex-column align-items-center justify-content-start text-center">
+                            <div
+                                class="intro_icon_container d-flex flex-column align-items-center justify-content-center">
+                                <div class="intro_icon"><img src="../img/icon_2.svg" alt=".."></div>
+                            </div>
+                            <div class="intro_item_content">
+                                <div class="intro_item_title">Get your Hosting</div>
+                                <div class="intro_item_text">
+                                    <p>Ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam
+                                        pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 intro_col">
+                        <div class="intro_item d-flex flex-column align-items-center justify-content-start text-center">
+                            <div
+                                class="intro_icon_container d-flex flex-column align-items-center justify-content-center">
+                                <div class="intro_icon"><img src="../img/icon_3.svg" alt=".."></div>
+                            </div>
+                            <div class="intro_item_content">
+                                <div class="intro_item_title">Set your Website</div>
+                                <div class="intro_item_text">
+                                    <p>Suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet
+                                        iaculis. Proin ac urna at lectus volutpat lobortis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="intro_button text-center ml-auto mr-auto"><a href="#">Start from
+                                $9.90/month</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--service-->
+
+        <div class="services">
+            <div class="parallax_background parallax-window" data-parallax="scroll"
+                style="background-image: url(../img/services.jpg);" data-speed="0.8"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section_title text-center">
+                            <h2>Our Services</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row services_row">
+                    <div class="col-4 service_col">
+                        <div class="service d-flex flex-column align-items-center justify-content-start text-center">
+                            <div class="service_icon"><img class="svg" src="../img/icon_4.svg" alt=".."></div>
+                            <div class="service_title">
+                                <h3>Cloud Backup</h3>
+                            </div>
+                            <div class="service_text">
+                                <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum.
+                                    Etiam pretium turpis ege.</p>
+                            </div>
+                            <div class="service_button"><a href="#">Read More</a></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 service_col">
+                        <div class="service d-flex flex-column align-items-center justify-content-start text-center">
+                            <div class="service_icon"><img class="svg" src="../img/icon_5.svg" alt=".."></div>
+                            <div class="service_title">
+                                <h3>Data Migration</h3>
+                            </div>
+                            <div class="service_text">
+                                <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum.
+                                    Etiam pretium turpis ege.</p>
+                            </div>
+                            <div class="service_button"><a href="#">Read More</a></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 service_col">
+                        <div class="service d-flex flex-column align-items-center justify-content-start text-center">
+                            <div class="service_icon"><img class="svg" src="../img/icon_6.svg" alt=".."></div>
+                            <div class="service_title">
+                                <h3>VPS Hosting</h3>
+                            </div>
+                            <div class="service_text">
+                                <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum.
+                                    Etiam pretium turpis ege.</p>
+                            </div>
+                            <div class="service_button"><a href="#">Read More</a></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--price-->
+
+        <div class="pricing">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div
+                            class="pricing_container d-flex flex-row align-items-start justify-content-start flex-wrap">
+
+                            <div class="pricing_item text-center">
+                                <div class="pricing_title">Starter Pack</div>
+                                <div class="pricing_content">
+                                    <div class="package_price">$ 9.90<span>/Month</span></div>
+                                    <div class="pricing_list">
+                                        <ul>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>50 GB Disk Space</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>1 sub-domain</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>5 E-mail Accounts</span>
+                                            </li>
+                                            <li class="d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/x.png" alt="">
+                                                <span>24/7 Support</span>
+                                            </li>
+                                            <li class="d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/x.png" alt="">
+                                                <span>Control Panel</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing_button ml-auto mr-auto"><a href="#">Buy Now</a></div>
+                                </div>
+                            </div>
+
+                            <div class="pricing_item text-center">
+                                <div class="pricing_title">Basic Pack</div>
+                                <div class="pricing_content">
+                                    <div class="package_price">$ 19.90<span>/Month</span></div>
+                                    <div class="pricing_list">
+                                        <ul>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>70 GB Disk Space</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>3 sub-domain</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>7 E-mail Accounts</span>
+                                            </li>
+                                            <li class="d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/x.png" alt="">
+                                                <span>24/7 Support</span>
+                                            </li>
+                                            <li class="d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/x.png" alt="">
+                                                <span>Control Panel</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing_button ml-auto mr-auto"><a href="#">Buy Now</a></div>
+                                </div>
+                            </div>
+
+                            <div class="pricing_item text-center">
+                                <div class="pricing_title">Premium Pack</div>
+                                <div class="pricing_content">
+                                    <div class="package_price">$ 39.90<span>/Month</span></div>
+                                    <div class="pricing_list">
+                                        <ul>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>90 GB Disk Space</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>5 sub-domain</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>10 E-mail Accounts</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>24/7 Support</span>
+                                            </li>
+                                            <li class="d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/x.png" alt="">
+                                                <span>Control Panel</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing_button ml-auto mr-auto"><a href="#">Buy Now</a></div>
+                                </div>
+                            </div>
+
+                            <div class="pricing_item text-center">
+                                <div class="pricing_title">Pro Pack</div>
+                                <div class="pricing_content">
+                                    <div class="package_price">$ 59.90<span>/Month</span></div>
+                                    <div class="pricing_list">
+                                        <ul>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>120 GB Disk Space</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>7 sub-domain</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>15 E-mail Accounts</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>24/7 Support</span>
+                                            </li>
+                                            <li
+                                                class="pack_ok d-flex flex-row align-items-center justify-content-center">
+                                                <img src="../img/ok.png" alt="">
+                                                <span>Control Panel</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="pricing_button ml-auto mr-auto"><a href="#">Buy Now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--choice-->
+
+        <div class="choice">
+            <div class="container">
+                <div class="row row-lg-eq-height">
+
+                    <div class="col-6 choice_col">
+                        <div class="choice_image"><img src="../img/choice.png" alt=""></div>
+                    </div>
+
+                    <div class="col-6 choice_col">
+                        <div class="choice_content">
+                            <div class="section_title">
+                                <h2>Why Choose us?</h2>
+                            </div>
+                            <div class="choice_text">
+                                <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam
+                                    pretium turpis eget nibh laoreet iaculis. Nullam lacinia ex eleifend orci porttitor,
+                                    suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis.
+                                </p>
+                            </div>
+                            <div class="choice_list">
+                                <ul class="d-flex flex-row align-items-start justify-content-between">
+                                    <li class="d-flex flex-column align-items-center justify-content-center">
+                                        <div class="choice_icon"><img src="../img/icon_7.svg" alt=".."></div>
+                                        <div class="choice_title">Marketing</div>
+                                    </li>
+                                    <li class="d-flex flex-column align-items-center justify-content-center">
+                                        <div class="choice_icon"><img src="../img/icon_8.svg" alt=".."></div>
+                                        <div class="choice_title">Stats</div>
+                                    </li>
+                                    <li class="d-flex flex-column align-items-center justify-content-center">
+                                        <div class="choice_icon"><img src="../img/icon_9.svg" alt=".."></div>
+                                        <div class="choice_title">Servers</div>
+                                    </li>
+                                    <li class="d-flex flex-column align-items-center justify-content-center">
+                                        <div class="choice_icon"><img src="../img/icon_10.svg" alt=".."></div>
+                                        <div class="choice_title">Quality</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--start build-->
+
+        <div class="cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div
+                            class="cta_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-between justify-content-center">
+                            <div class="cta_title">Start building your website now!</div>
+                            <div class="cta_price"><span>from</span>$9.90<span>/month</span></div>
+                            <div class="cta_button"><a href="#">Start Now</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="footer_about">
+                            <div class="footer_logo">Host<span>Space</span></div>
+                            <div class="copyright">
+                                Copyright &copy; All rights reserved | This template is made with <i
+                                    class="fa fa-heart-o"></i> by <a href="" target="_blank">Colorlib</a>
+                            </div>
+                            <div class="footer_text">
+                                <p>Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam
+                                    pretium turpis eget nibh laoreet iaculis. Nullam lacinia ex eleifend orci porttitor,
+                                    suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis.
+                                </p>
+                            </div>
+                            <div class="contact_container">
+                                <form action="#" id="contact_form" class="contact_form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="contact_input" placeholder="Your Name"
+                                                required="required">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="email" class="contact_input" placeholder="Your e-mail"
+                                                required="required">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <textarea class="contact_input contact_textarea" placeholder="Message"
+                                            required="required"></textarea>
+                                    </div>
+                                    <button class="contact_button">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 footer_col">
+                        <div class="">
+                            <div class="row">
+                                <div class="col-6 footer_list_col">
+                                    <div class="footer_list_title">Hosting Options</div>
+                                    <ul class="footer_list">
+                                        <li><a href="#">Web Hosting</a></li>
+                                        <li><a href="#">WordPress Hosting</a></li>
+                                        <li><a href="#">VPS Hosting</a></li>
+                                        <li><a href="#">Cloud Server</a></li>
+                                        <li><a href="#">Reseller Package</a></li>
+                                        <li><a href="#">Dedicated Hosting</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 footer_list_col">
+                                    <div class="footer_list_title">Domains</div>
+                                    <ul class="footer_list">
+                                        <li><a href="#">Buy a Domain</a></li>
+                                        <li><a href="#">Premium Domain Names</a></li>
+                                        <li><a href="#">Web Hosting</a></li>
+                                        <li><a href="#">Transfer Your Domain</a></li>
+                                        <li><a href="#">Domain Marketplace</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 footer_list_col">
+                                    <div class="footer_list_title">Resellers</div>
+                                    <ul class="footer_list">
+                                        <li><a href="#">VPS Hosting</a></li>
+                                        <li><a href="#">Cloud Server</a></li>
+                                        <li><a href="#">Reseller Package</a></li>
+                                        <li><a href="#">Dedicated Hosting</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 footer_list_col">
+                                    <div class="footer_list_title">Support</div>
+                                    <ul class="footer_list">
+                                        <li><a href="#">Buy a Domain</a></li>
+                                        <li><a href="#">Premium Domain Names</a></li>
+                                        <li><a href="#">Web Hosting</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script defer>
+        const email = document.querySelector('#email');
+        const password = document.querySelector('#password');
+        const agreeInput = document.querySelector('#log_name');
+        const form = document.querySelector('#signin');
+        // console.log(getAllLocalStorageItems());
+
+        // function getAllLocalStorageItems() {
+        //     const items = {};
+        //     for (let i = 0; i < localStorage.length; i++) {
+        //         const key = localStorage.key(i); // Get the key at index i
+        //         const value = JSON.parse(localStorage.getItem(key)); // Get the value associated with the key
+        //         items[key] = value; // Store the key-value pair in an object
+        //     }
+        //     return items;
+        // }
+
+        form.addEventListener('submit', (e) => {
+            // console.log(JSON.parse(localStorage.getItem(email.value)).pass_Word);
+
+            let isEmailValid = checkemail(),
+                isPasswordValid = checkpassword();
+
+            let isLoginValid = isEmailValid && isPasswordValid;
+            if (isLoginValid) {
+                $(".log_reg").css({ "display": "none" });
+                $(".logged a").css({ "display": "block" });
+                const logname = JSON.parse(localStorage.getItem(email.value)).first_name;
+                console.log(logname);
+                document.getElementById("log_name").innerHTML = logname;
+            } else {
+                $(".log_reg").css({ "display": "block" });
+            }
+            e.preventDefault();
+        });
+
+        const isRequired = value => value === '' ? false : true;
+        const isBetween = (length, min, max) => length < min || length > max ? false : true;
+
+        const checkemail = () => {
+            let valid = false;
+            const e_mail = email.value.trim();
+            if (!isRequired(e_mail)) {
+                showError(email, 'Email can\'t be empty.');
+            } else if (!isEmailValid(e_mail)) {
+                showError(email, 'Email is not valid.');
+            } else {
+                if (localStorage.getItem(e_mail) === null) {
+                    showError(email, 'Email is not registered.');
+                } else {
+                    showSuccess(email);
+                    valid = true;
+                }
+                // for (let i = 0; i < localStorage.length; i++) {
+                //     const key = localStorage.key(i); // Get the key at index i
+                //     if (key === email.value) {
+                //         showSuccess(email);
+                //         valid = true;
+                //     } else {
+                // showError(email, 'Email is not registered.');
+                //     }
+                // }
+            }
+            return valid;
+        };
+
+        const checkpassword = () => {
+            let valid = false;
+            const pass_word = password.value.trim();
+            if (!isRequired(pass_word)) {
+                showError(password, 'Password can\'t be empty.');
+            } else {
+                if (pass_word === JSON.parse(localStorage.getItem(email.value)).pass_Word) {
+                    showSuccess(password);
+                    valid = true;
+                } else {
+                    showError(password, 'Password doesn\'t match.');
+                }
+            }
+            return valid;
+        };
+
+        const isEmailValid = (email) => {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        };
+
+        const showError = (input, message) => {
+            const inputGroup = input.parentElement;
+            inputGroup.classList.remove('success');
+            inputGroup.classList.add('error');
+            const error = inputGroup.querySelector('small');
+            error.textContent = message;
+        };
+
+        const showSuccess = (input) => {
+            const inputGroup = input.parentElement;
+            inputGroup.classList.remove('error');
+            inputGroup.classList.add('success');
+            const error = inputGroup.querySelector('small');
+            error.textContent = '';
+        }
+
+        const debounce = (fn, delay = 200) => {
+            let timeoutId;
+            return (...args) => {
+                // cancel the previous timer
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+                // setup a new timer
+                timeoutId = setTimeout(() => {
+                    fn.apply(null, args)
+                }, delay);
+            };
+        };
+
+        form.addEventListener('input', debounce(function (e) {
+            switch (e.target.id) {
+                case 'email':
+                    checkemail();
+                    break;
+                case 'password':
+                    checkpassword();
+                    break;
+            }
+        }));
+    </script>
+    <script>
+
+        if (window.reg_success) {
+            $(".log_reg").css({ "display": "none" });
+            $(".logged a").css({ "display": "block" });
+            const logname = JSON.parse(localStorage.getItem(email.value)).first_name;
+            console.log(logname);
+            document.getElementById("log_name").innerHTML = logname;
+        } else {
+            $(".log_reg").css({ "display": "block" });
+        }
+
+        // nav transition
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                if (scroll > 100) {
+                    $(".header").css({ "background": "#200e35", "height": "80px", "transition": ".5s ease" });
+                    $(".header_content").css({ "padding-bottom": "3%" });
+                    $(".logo").css({ "padding-bottom": "4%" });
+                    $(".log_reg").css({ "padding-bottom": "4%" });
+                } else {
+                    $(".header").css("background", "transparent");
+                }
+            })
+        })
+        // nav menu
+        $(document).ready(function () {
+            $(".hamburger").click(function () {
+                $(".menu").css({ "display": "block", "transition": "width 1s linear" });
+            });
+        });
+        $(document).ready(function () {
+            $(".menu_close").click(function () {
+                $(".menu").css("display", "none");
+            });
+        });
+
+        const hidename = () => {
+            $(".log_reg").css({ "display": "block" });
+            $(".logged a").css({ "display": "none" });
+        }
+    </script>
+</body>
+
+</html>
